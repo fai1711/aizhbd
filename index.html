@@ -68,14 +68,17 @@
     <script>
         const playButton = document.getElementById("playButton");
         const audio = document.getElementById("birthdaySong");
+        const playIcon = playButton.querySelector(".playIcon");
 
         // Toggle audio play/pause on button click
         playButton.addEventListener("click", () => {
             if (audio.paused) {
                 audio.play();
+                playIcon.innerHTML = "⏸"; // Change to pause icon
                 playButton.classList.add("playing");
             } else {
                 audio.pause();
+                playIcon.innerHTML = "▶"; // Change to play icon
                 playButton.classList.remove("playing");
             }
         });
